@@ -2,30 +2,22 @@
 
 namespace WebApiMacuco.Models
 {
-  public class UserRecord
-  {
-    public int UserId { get; set; }
-    public string Description { get; set; }
-    public string Document { get; set; }
-    public string Phone { get; set; }
-    public string Email { get; set; }
-    public string Observation { get; set; }
-    public string Base64 { get; set; }
-    public string UserCode { get; set; }
-    public DateTime BirthDate { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime? UpdatedAt { get; set; }
-  }
+    public class UserRecord
+    {
+        public int UserId { get; set; }
+        public string Description { get; set; } = string.Empty;
+        public string Document { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Observation { get; set; } = string.Empty;
+        public string Base64 { get; set; } = string.Empty;
+        public string UserCode { get; set; } = string.Empty;
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string Token { get; set; } = string.Empty;
+        public DateTime BirthDate { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+    }
 
-  public class AuthenticationRequest
-  {
-    public string Username { get; set; }
-    public string Password { get; set; }
-  }
-
-  public class AuthenticationResponse
-  {
-    public string Token { get; set; }
-    public DateTime Expiration { get; set; }
-  }
 }
