@@ -1,6 +1,44 @@
-@WebApiMacuco_HostAddress = http://localhost:5110
+@WebApiMacuco_HostAddress = http://localhost:5000
+### Autenticar e obter o token JWT
+POST http://localhost:5000/api/UserRecords/autenticar
+Content-Type: application/json
 
-GET {{WebApiMacuco_HostAddress}}/weatherforecast/
+{
+  "username": "administrator",
+  "password": "ewV4SG%aKLRXzh",
+  "token": "MinhaChaveMuitoSegura1234567890Segura"
+}
+
+> {% assign jwtToken = response.body.token %}
+###
+
+### Exemplo de POST para incluir face com JWT e todos os campos obrigatórios
+POST http://localhost:5000/api/UserRecords/incluir-face
+Authorization: Bearer {{jwtToken}}
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "description": "Usuário de exemplo",
+  "document": "123456789",
+  "phone": "+55 31 98765-4321",
+  "email": "user@example.com",
+  "observation": "Observação sobre o usuário",
+  "base64": "base64string",
+  "userCode": "USR12345",
+  "username": "user1",
+  "password": "senhaSegura123",
+  "token": "MinhaChaveMuitoSegura1234567890Segura",
+  "birthDate": "1995-12-25T00:00:00.000Z",
+  "createdAt": "2024-10-04T17:21:02.443Z",
+  "updatedAt": "2024-10-04T17:21:02.443Z"
+}
+
+###
+
+### Exemplo de DELETE para excluir face usando o ID
+DELETE http://localhost:5000/api/UserRecords/excluir-face/1
+Authorization: Bearer {{jwtToken}}
 Accept: application/json
 
 ###

@@ -31,7 +31,7 @@ namespace WebApiMacuco.Controllers
         [HttpPost("autenticar")]
         public ActionResult<AuthenticationResponse> Authenticate([FromBody] AuthenticationRequest request)
         {
-            if (request.Username == "admin" && request.Password == "password")
+            if (request.Username == "administrator" && request.Password == "ewV4SG%aKLRXzh")
             {
                 var response = _authenticationService.GenerateJwtToken("1");
                 return Ok(response);

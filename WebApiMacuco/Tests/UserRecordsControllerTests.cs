@@ -25,7 +25,7 @@ namespace WebApiMacuco.Tests
         {
             _mockContext = new Mock<ApplicationDbContext>();
             var configuration = new Mock<IConfiguration>();
-            configuration.SetupGet(c => c["Jwt:Secret"]).Returns("AF4eJTYcxO");
+            configuration.SetupGet(c => c["Jwt:Secret"]).Returns("MinhaChaveMuitoSegura1234567890Segura");
             _controller = new UserRecordsController(_mockContext.Object, configuration.Object);
             _mocker = new AutoMocker();
         }

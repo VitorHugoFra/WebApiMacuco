@@ -14,7 +14,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddControllers();
 
 // Add JWT authentication
-var key = Encoding.ASCII.GetBytes("AF4eJTYcxO"); // Use a strong key here
+var key = Encoding.ASCII.GetBytes("MinhaChaveMuitoSegura1234567890Segura"); // Use a strong key here
 builder.Services.AddAuthentication(options =>
 {
   options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -65,7 +65,7 @@ if (app.Environment.IsDevelopment())
   app.UseDeveloperExceptionPage();
 }
 
-app.UseHttpsRedirection();
+app.UseHttpsRedirection();// tirar
 
 app.UseAuthentication();
 app.UseAuthorization();
